@@ -27,7 +27,7 @@ service Greeter {
     };
   }
 
-  // POST service
+  // GET service with query parameter
   rpc  EchoName(HelloRequest) returns (HelloReply){
     option (google.api.http)={
       get:"/api/v1/greet/{name}"

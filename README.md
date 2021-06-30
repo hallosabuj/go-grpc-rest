@@ -24,7 +24,15 @@ Here I am attaching protoc compiler for linux, and googleapi library so that you
    StartREST() function will start a rest server, 
    SimpleRPC() function can be used to call normal RPC functions.
 
+## 🔧 Running the tests
 
-## Usage <a name = "usage"></a>
+For testing I have used Thunder Client extension in VScode.
 
-You can use this to get an oversight of building a rest API with grpc in golang
+### Break down into end to end tests
+
+First install the Thunder Client in vscode.
+
+```
+Then import the json collection 'thunder-collection_go-rest-server.json'
+Then you can run a single request once at a time, or as collection.
+```
