@@ -35,6 +35,7 @@ func StartREST(conn *grpc.ClientConn) {
 	// Now connecting to the google api from using the REST server
 	/////////////////////////////////////////////////////////////////////
 	mux := runtime.NewServeMux()
+	// Register Greeter service in the grpc client
 	err := proto.RegisterGreeterHandler(context.Background(), mux, conn)
 	if err != nil {
 		fmt.Println("Failed initializing grpc gateway handler, error: ", err)
@@ -51,7 +52,7 @@ func StartREST(conn *grpc.ClientConn) {
 	log.Println(http.ListenAndServe(":8080", handlers))
 }
 
-// This function is user for calling rpc functions directly
+// This function is user for calling rpc functions which dont have any api end point
 func SimpleRPC(conn *grpc.ClientConn) {
 	c := proto.NewGreeterClient(conn)
 	name := defaultName
